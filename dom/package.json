@@ -49,15 +49,14 @@
     "prepublishOnly": "pnpm run build && pnpm run test"
   },
   "dependencies": {
-    "@cycle/run": "link:../run",
-    "rxjs": "^6.3.3",
+    "@cycle/run": "^5.2.0-rc.4",
     "snabbdom": "^0.7.2",
     "snabbdom-selector": "^4.1.0",
     "xstream": "*"
   },
   "devDependencies": {
     "@cycle/isolate": "^4.1.0",
-    "@cycle/rxjs-run": "^10.1.0",
+    "@cycle/rxjs-run": "^10.2.0-rc.6",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.11",
     "@types/sinon": "^5.0.7",
@@ -73,6 +72,7 @@
     "mocha": "^5.2.0",
     "most": "^1.7.3",
     "mutation-observer": "1.0.3",
+    "rxjs": "^6.3.3",
     "simulant": "^0.2.2",
     "sinon": "^7.1.1",
     "snabbdom-pragma": "^2.8.0",

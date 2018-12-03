@@ -3,7 +3,6 @@
   "compilerOptions": {
     "jsx": "react",
     "jsxFactory": "Snabbdom.createElement",
-    "strict": true,
     "lib": [
       "dom",
       "es5",
