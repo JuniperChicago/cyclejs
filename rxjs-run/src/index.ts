@@ -14,7 +14,7 @@ import {
   WidenStream,
 } from '@cycle/run';
 
-export type ToObservable<S> = S extends Stream<infer T> ? Observable<T> : never;
+export type ToObservable<S> = S extends Stream<infer T> ? Observable<T> : S;
 export type ToObservables<S> = {[k in keyof S]: ToObservable<S[k]>};
 
 export type AssertObservables<S> = {
