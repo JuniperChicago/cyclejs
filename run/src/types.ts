@@ -1,7 +1,7 @@
 import {Stream} from 'xstream';
 
-export interface FantasyObserver {
-  next(x: any): void;
+export interface FantasyObserver<T> {
+  next(x: T): void;
   error(err: any): void;
   complete(c?: any): void;
 }
@@ -10,8 +10,8 @@ export interface FantasySubscription {
   unsubscribe(): void;
 }
 
-export interface FantasyObservable {
-  subscribe(observer: FantasyObserver): FantasySubscription;
+export interface FantasyObservable<T> {
+  subscribe(observer: FantasyObserver<T>): FantasySubscription;
 }
 
 export interface DevToolEnabledSource {
@@ -44,11 +44,13 @@ export type MatchingMain<D extends Drivers, M extends Main> =
       (): Sinks<M>;
     };
 
+export type ToStream<S> = S extends FantasyObservable<infer T> ? Stream<T> : S;
+
 export type MatchingDrivers<D extends Drivers, M extends Main> = Drivers &
   {
     [k in string & keyof Sinks<M>]:
       | (() => Sources<D>[k])
-      | ((si: Sinks<M>[k]) => Sources<D>[k])
+      | ((si: ToStream<Sinks<M>[k]>) => Sources<D>[k])
   };
 
 export interface CycleProgram<
