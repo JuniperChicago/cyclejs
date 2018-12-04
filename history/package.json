@@ -21,7 +21,7 @@
     "xstream": "*"
   },
   "devDependencies": {
-    "@cycle/rxjs-run": "^10.2.0-rc.5",
+    "@cycle/rxjs-run": "^10.2.0-rc.7",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.11",
     "@types/sinon": "^5.0.7",
