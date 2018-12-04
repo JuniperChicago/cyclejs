@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@cycle/isolate": "^4.1.0",
-    "@cycle/rxjs-run": "^10.2.0-rc.6",
+    "@cycle/rxjs-run": "^10.2.0-rc.7",
     "@types/body-parser": "1.17.x",
     "@types/cookie-parser": "1.4.x",
     "@types/express": "4.16.x",
