@@ -1,6 +1,6 @@
 {
   "name": "@cycle/rxjs-run",
-  "version": "10.2.0-rc.6",
+  "version": "10.2.0-rc.7",
   "description": "The Cycle run() function meant to be used with RxJS v5",
   "license": "MIT",
   "homepage": "https://cycle.js.org",
