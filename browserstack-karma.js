@@ -62,7 +62,7 @@ module.exports = {
     os_version: '4.4',
     real_mobile: true,
   },
-  BS_iphone_10: {
+  /*BS_iphone_10: {
     base: 'BrowserStack',
     browser: 'Mobile Safari',
     browser_version: null,
@@ -70,7 +70,7 @@ module.exports = {
     real_mobile: true,
     os: 'ios',
     os_version: '10.3',
-  },
+  },*/
   BS_MS_Edge: {
     base: 'BrowserStack',
     browser: 'edge',
