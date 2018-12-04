@@ -17,19 +17,17 @@ import {
 export type ToObservable<S> = S extends Stream<infer T> ? Observable<T> : S;
 export type ToObservables<S> = {[k in keyof S]: ToObservable<S[k]>};
 
-export type AssertObservables<S> = {
-  [k in keyof S]: S[k] extends Observable<any> ? S[k] : never
-};
-
 export type MatchingMain<D extends Drivers, M extends Main> =
   | Main & {
-      (so: ToObservables<Sources<D>>): AssertObservables<Sinks<M>>;
+      (so: ToObservables<Sources<D>>): Sinks<M>;
     }
   | Main & {
-      (): AssertObservables<Sinks<M>>;
+      (): Sinks<M>;
     };
 
-export type ToStream<S> = S extends Observable<infer T> ? Stream<T> : never;
+// We return S and not never, because isolation currently cannot type the return stream
+// resulting in the value being typed any.
+export type ToStream<S> = S extends Observable<infer T> ? Stream<T> : S;
 
 export type MatchingDrivers<D extends Drivers, M extends Main> = Drivers &
   {
